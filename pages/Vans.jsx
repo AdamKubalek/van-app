@@ -9,7 +9,7 @@ const Vans = () => {
       .then((data) => setVans(data.vans));
   }, []);
 
-  const vansElements = vans.map((van) => (
+  const vanElements = vans.map((van) => (
     <div key={van.id} className="van-tile">
       <img src={van.imageUrl} />
       <div className="van-info">
@@ -23,7 +23,11 @@ const Vans = () => {
     </div>
   ));
 
-  return <div>{ vansElements} </div>;
+  return (
+    <div className="van-list-container">
+      <div className="van-list">{vanElements}</div>
+    </div>
+  );
 };
 
 export default Vans;
